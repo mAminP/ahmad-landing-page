@@ -16,7 +16,7 @@
             axis="x"
             class="text-center"
           >
-            <img width="300" src="~/assets/images/1 (5).png" alt="">
+            <img width="300" src="http://uupload.ir/files/hfdw_1_(1).png" alt="">
           </kinesis-element>
         </kinesis-container>
       </v-col>

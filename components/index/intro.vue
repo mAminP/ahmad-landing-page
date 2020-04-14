@@ -42,7 +42,7 @@
         </v-col>
 
         <v-col order-lg="1" cols="12" lg="2" offset="1">
-          <img src="~/assets/Images/1 (5).png" alt="logrocket logo">
+          <img src="https://i.imgur.com/7Cj6ZCk.png" alt="logrocket logo">
         </v-col>
       </v-row>
     </kinesis-element>

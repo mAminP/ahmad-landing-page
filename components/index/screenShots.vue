@@ -26,7 +26,7 @@
               transform-origin="50% 300%"
               axis="x"
             >
-              <img width="300" src="~/assets/Images/1 (2).png" alt="logrocket logo">
+              <img width="300" src="https://i.imgur.com/OeKnIa6.jpg" alt="logrocket logo">
             </kinesis-element>
             <kinesis-element
               class="el"
@@ -35,7 +35,7 @@
               type="rotate"
               transform-origin="50% 300%"
             >
-              <img width="300" src="~/assets/Images/1 (4).png" alt="logrocket logo">
+              <img width="300" src="https://i.imgur.com/mZrmbkf.jpg" alt="logrocket logo">
             </kinesis-element>
             <kinesis-element
               class="el"
@@ -44,7 +44,7 @@
               type="rotate"
               transform-origin="50% 300%"
             >
-              <img width="300" src="~/assets/Images/1 (3).png" alt="logrocket logo">
+              <img width="300" src="http://uupload.ir/files/hfdw_1_(1).png" alt="logrocket logo">
             </kinesis-element>
             <kinesis-element
               class="el"
@@ -53,7 +53,7 @@
               type="rotate"
               transform-origin="50% 300%"
             >
-              <img width="300" src="~/assets/Images/1 (4).png" alt="logrocket logo">
+              <img width="300" src="https://i.imgur.com/OeKnIa6.jpg" alt="logrocket logo">
             </kinesis-element>
             <kinesis-element
               class="el"
@@ -62,7 +62,7 @@
               type="rotate"
               transform-origin="50% 300%"
             >
-              <img width="300" src="~/assets/Images/1 (3).png" alt="logrocket logo">
+              <img width="300" src="https://i.imgur.com/JltLG7O.jpg" alt="logrocket logo">
             </kinesis-element>
           </kinesis-container>
         </v-row>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <intro />
+    <topFeatures />
     <features />
     <screenShots />
     <more-features />
@@ -14,6 +15,7 @@ import screenShots from '@/components/index/screenShots'
 import features from '@/components/index/features'
 import moreFeatures from '@/components/index/moreFeatures'
 import contactUs from '@/components/index/contactUs'
+import topFeatures from '@/components/index/topFeatures'
 
 export default {
   components: {
@@ -21,7 +23,8 @@ export default {
     screenShots,
     features,
     moreFeatures,
-    contactUs
+    contactUs,
+    topFeatures
   }
 }
 </script>
