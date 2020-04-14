@@ -16,7 +16,7 @@
             axis="x"
             class="text-center"
           >
-            <img width="300" src="http://uupload.ir/files/hfdw_1_(1).png" alt="">
+            <img width="600" src="https://img.deszone.net/2019/12/online-shopping-vector-illustration1.jpg" alt="">
           </kinesis-element>
         </kinesis-container>
       </v-col>

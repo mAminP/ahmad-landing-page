@@ -10,25 +10,32 @@
         </p>
       </v-col>
       <v-col cols="8">
-        <v-row class="px-3">
-          <v-col v-for="i in 4" :key="i" cols="6">
-            <v-card>
-              <v-row no-gutters="" align="center">
-                <v-icon x-large="" class="mx-5">
-                  mdi-plus
-                </v-icon>
-                <v-col>
-                  <h3 class="pr-3 pt-2">
-                    تایتل
-                  </h3>
-                  <v-card-text class="pt-1 text-justify">
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهو احان گرافیک است. چاپگرها ستون
-                  </v-card-text>
-                </v-col>
-              </v-row>
-            </v-card>
-          </v-col>
-        </v-row>
+        <kinesis-container event="scroll">
+          <kinesis-element
+            :strength="60"
+            axis="y"
+          >
+            <v-row class="px-3">
+              <v-col v-for="i in 4" :key="i" cols="6">
+                <v-card>
+                  <v-row no-gutters="" align="center">
+                    <v-icon x-large="" class="mx-5">
+                      mdi-plus
+                    </v-icon>
+                    <v-col>
+                      <h3 class="pr-3 pt-2">
+                        تایتل
+                      </h3>
+                      <v-card-text class="pt-1 text-justify">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهو احان گرافیک است. چاپگرها ستون
+                      </v-card-text>
+                    </v-col>
+                  </v-row>
+                </v-card>
+              </v-col>
+            </v-row>
+          </kinesis-element>
+        </kinesis-container>
       </v-col>
     </v-row>
   </v-container>
