@@ -1,0 +1,18 @@
+  @font-face {
+    font-family: font-aviny;
+    src: url("~assets/fonts/aviny.ttf");
+  }
+
+  @font-face {
+    font-family: font-iranYekanWebRegular;
+    src: url("~assets/fonts/iranyekanwebregular.woff");
+  }
+
+  .font-aviny {
+    font-family: font-aviny !important;
+  }
+
+  .font-iranYekanWebRegular {
+    font-family: font-iranYekanWebRegular !important;
+  }
+  
