@@ -12,8 +12,7 @@
     >
       <div class="circle circle-purple3" />
     </kinesis-element>
-    <feature />
-    <feature reverse />
+    <feature v-for="feature in Features" :key="feature.title" :reverse="feature.reverse" :data="feature"/>
   </kinesis-container>
 </template>
 
@@ -23,6 +22,11 @@ import feature from '@/components/index/feature'
 export default {
   components: {
     feature
+  },
+  computed: {
+    Features () {
+      return this.$store.getters.Features
+    }
   }
 }
 </script>
@@ -32,14 +36,16 @@ export default {
   border-radius: 100%;
 }
 .circle.circle-purple2 {
-  background-color: rgba(254, 227, 229,0.5);
+  background-color: #e1f3ff;
+  opacity: 0.5;
   width: 12vw;
   height: 12vw;
   right: -10vh;
   top: 50vh;
 }
 .circle.circle-purple3 {
-  background-color: rgba(200, 226, 251,0.5);
+  background-color: #6dffe8;
+  opacity: 0.1;
   width: 12vw;
   height: 12vw;
   left: -10vh;

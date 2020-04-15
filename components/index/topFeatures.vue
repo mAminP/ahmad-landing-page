@@ -1,34 +1,35 @@
 <template>
   <v-container class="my-8">
     <v-row no-gutters="">
-      <h2>ویژگی ها</h2>
+      <h2 v-text="topFeatures.title" />
     </v-row>
-    <v-row no-gutters="" align="start" justify="center">
-      <v-col cols="4">
-        <p class="pl-3 text-justify">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری
-        </p>
+    <v-row no-gutters="" align="start" justify="start">
+      <v-col cols="12" lg="4" md="4" sm="12">
+        <p class="pl-lg-3 text-justify" v-text="topFeatures.paragraph" />
       </v-col>
-      <v-col cols="8">
+      <v-col cols="12" lg="8" md="8" sm="12">
         <kinesis-container event="scroll">
           <kinesis-element
             :strength="60"
             axis="y"
           >
             <v-row class="px-3">
-              <v-col v-for="i in 4" :key="i" cols="6">
+              <v-col
+                v-for="card in topFeatures.cards"
+                :key="card.title"
+                cols="12"
+                lg="6"
+                md="12"
+                sm="6"
+              >
                 <v-card>
                   <v-row no-gutters="" align="center">
                     <v-icon x-large="" class="mx-5">
                       mdi-plus
                     </v-icon>
                     <v-col>
-                      <h3 class="pr-3 pt-2">
-                        تایتل
-                      </h3>
-                      <v-card-text class="pt-1 text-justify">
-                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهو احان گرافیک است. چاپگرها ستون
-                      </v-card-text>
+                      <h3 class="pr-3 pt-2" v-text="card.title" />
+                      <v-card-text class="pt-1 text-justify" v-text="card.text" />
                     </v-col>
                   </v-row>
                 </v-card>
@@ -43,7 +44,11 @@
 
 <script>
 export default {
-
+  computed: {
+    topFeatures () {
+      return this.$store.getters.topFeatures
+    }
+  }
 }
 </script>
 

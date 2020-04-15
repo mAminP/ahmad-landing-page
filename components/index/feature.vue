@@ -1,22 +1,32 @@
 <template>
   <v-container>
     <v-row align="center">
-      <v-col offset="" :order="reverse ? 2 : 1">
-        <h2 class="font-aviny">
-          عنوان
-        </h2>
-        <p class="text-justify font-iranYekanWebRegular">
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-        </p>
+      <v-col
+        cols="12"
+        lg="6"
+        md="6"
+        sm="6"
+        offset=""
+        :order="reverse ? 2 : 1"
+      >
+        <h2 v-text="data.title" />
+        <p class="text-justify" v-text="data.paragraph" />
       </v-col>
-      <v-col :order="reverse ? 1 : 2">
+      <v-col
+        cols="12"
+        lg="6"
+        md="6"
+        sm="6"
+        class="d-none d-sm-block d-md-block d-lg-block"
+        :order="reverse ? 1 : 2"
+      >
         <kinesis-container event="scroll">
           <kinesis-element
             :strength="reverse ? -50 : 50"
             axis="x"
             class="text-center"
           >
-            <img width="600" src="https://img.deszone.net/2019/12/online-shopping-vector-illustration1.jpg" alt="">
+            <v-img eager :src="data.image" />
           </kinesis-element>
         </kinesis-container>
       </v-col>
@@ -29,6 +39,10 @@ export default {
   props: {
     reverse: {
       type: Boolean
+    },
+    data: {
+      type: Object,
+      required: true
     }
   }
 }

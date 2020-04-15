@@ -16,19 +16,23 @@
     <kinesis-element :strength="18">
       <div class="circle circle-purple3" />
     </kinesis-element>
-    <kinesis-element type="depth_inv" :strength="7">
+    <kinesis-element type="depth_inv" :strength="5">
       <v-row justify="center" align="start">
-        <v-col class="white--text" order-lg="2" cols="12" lg="4">
+        <v-col
+          class="white--text my-3"
+          order-lg="2"
+          order-md="2"
+          cols="10"
+          sm="8"
+          md="6"
+          lg="4"
+        >
           <kinesis-container event="scroll">
             <kinesis-element :strength="70" axis="y">
-              <h2 class="font-aviny">
-                اسم برنامه
-              </h2>
+              <h2 v-text="intro.title" />
             </kinesis-element>
             <kinesis-element :strength="80" axis="y">
-              <p class="font-iranYekanWebRegular text-justify">
-                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام استفاده قرار گیرد.
-              </p>
+              <p class="text-justify" v-text="intro.paragraph" />
             </kinesis-element>
             <kinesis-element :strength="90" axis="y">
               <v-btn class="font-iranYekanWebRegular" large="" outlined="" color="white">
@@ -41,8 +45,16 @@
           </kinesis-container>
         </v-col>
 
-        <v-col order-lg="1" cols="12" lg="2" offset="1">
-          <img src="https://i.imgur.com/7Cj6ZCk.png" alt="logrocket logo">
+        <v-col
+          order-lg="1"
+          order-md="1"
+          cols="9"
+          sm="6"
+          lg="3"
+          md="4"
+          offset-lg="1"
+        >
+          <v-img eager :src="intro.image" />
         </v-col>
       </v-row>
     </kinesis-element>
@@ -55,7 +67,11 @@
 
 <script>
 export default {
-
+  computed: {
+    intro () {
+      return this.$store.getters.intro
+    }
+  }
 }
 </script>
 
@@ -115,8 +131,5 @@ background: linear-gradient(128deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba
 }
 img {
   width: 22rem;
-}
-h2{
-  font-size: 2.1em;
 }
 </style>
