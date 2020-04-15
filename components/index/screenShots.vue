@@ -1,73 +1,53 @@
 <template>
   <section class="scroll">
-    <kinesis-container event="scroll">
-      <div class="scroll__description">
-        <rune :size="400" :parts="5" :top="0" :left="-450" />
-        <rune :size="200" :parts="5" :top="10" :left="10" />
-        <rune :size="50" :parts="5" :top="250" :left="20" />
-        <rune :size="220" :parts="5" :top="50" :left="300" />
-        <rune :size="100" :parts="5" :top="300" :left="200" />
-        <rune :size="180" :parts="5" :top="300" :left="450" />
-        <rune :size="80" :parts="5" :top="-5" :left="1050" />
-        <rune :size="100" :parts="5" :top="250" :left="900" />
-        <rune :size="150" :parts="5" :top="-20" :left="1350" />
-        <rune :size="250" :parts="5" :top="-100" :left="700" />
-        <rune :size="125" :parts="5" :top="200" :left="700" />
-        <rune :size="300" :parts="5" :top="100" :left="1050" />
-        <rune :size="200" :parts="5" :top="220" :left="1400" />
-        <rune :size="150" :parts="5" :top="420" :left="950" />
-        <rune :size="250" :parts="5" :top="400" :left="-100" />
-        <v-row align="center" justify="center">
-          <kinesis-container>
-            <kinesis-element
-              class="el"
-              :strength="3"
-              type="depth"
-              transform-origin="50% 300%"
-              axis="x"
+    <v-container>
+      <v-row no-gutters="">
+        <v-col cols="12" class="gotop">
+          <h2> تصاویری از محیط نرم افزار </h2>
+        </v-col>
+      </v-row>
+      <kinesis-container event="scroll">
+        <div class="scroll__description">
+          <rune :size="400" :parts="5" :top="0" :left="-450" />
+          <rune :size="200" :parts="5" :top="10" :left="10" />
+          <rune :size="50" :parts="5" :top="250" :left="20" />
+          <rune :size="220" :parts="5" :top="50" :left="300" />
+          <rune :size="100" :parts="5" :top="300" :left="200" />
+          <rune :size="180" :parts="5" :top="300" :left="450" />
+          <rune :size="80" :parts="5" :top="-5" :left="1050" />
+          <rune :size="100" :parts="5" :top="250" :left="900" />
+          <rune :size="150" :parts="5" :top="-20" :left="1350" />
+          <rune :size="250" :parts="5" :top="-100" :left="700" />
+          <rune :size="125" :parts="5" :top="200" :left="700" />
+          <rune :size="300" :parts="5" :top="100" :left="1050" />
+          <rune :size="200" :parts="5" :top="220" :left="1400" />
+          <rune :size="150" :parts="5" :top="420" :left="950" />
+          <rune :size="250" :parts="5" :top="400" :left="-100" />
+          <v-row align="center" justify="center">
+            <v-col
+              v-for="(item,index) in screenShots"
+              :key="index"
+              cols="6"
+              lg="3"
+              md="3"
+              sm="4"
             >
-              <img width="300" src="https://i.imgur.com/OeKnIa6.jpg" alt="logrocket logo">
-            </kinesis-element>
-            <kinesis-element
-              class="el"
-              :strength="8"
-              axis="x"
-              type="rotate"
-              transform-origin="50% 300%"
-            >
-              <img width="300" src="https://i.imgur.com/mZrmbkf.jpg" alt="logrocket logo">
-            </kinesis-element>
-            <kinesis-element
-              class="el"
-              :strength="5"
-              axis="x"
-              type="rotate"
-              transform-origin="50% 300%"
-            >
-              <img width="300" src="http://uupload.ir/files/hfdw_1_(1).png" alt="logrocket logo">
-            </kinesis-element>
-            <kinesis-element
-              class="el"
-              :strength="-8"
-              axis="x"
-              type="rotate"
-              transform-origin="50% 300%"
-            >
-              <img width="300" src="https://i.imgur.com/OeKnIa6.jpg" alt="logrocket logo">
-            </kinesis-element>
-            <kinesis-element
-              class="el"
-              :strength="-5"
-              axis="x"
-              type="rotate"
-              transform-origin="50% 300%"
-            >
-              <img width="300" src="https://i.imgur.com/JltLG7O.jpg" alt="logrocket logo">
-            </kinesis-element>
-          </kinesis-container>
-        </v-row>
-      </div>
-    </kinesis-container>
+              <kinesis-container>
+                <kinesis-element
+                  :class="index===3 ? 'd-block d-sm-none d-md-block d-lg-block d-xl-block': ''"
+                  :strength="item.strength"
+                  :type="item.type"
+                  :transform-origin="item.transformorigin"
+                  :axis="item.axis"
+                >
+                  <v-img eager="" :src="item.image" />
+                </kinesis-element>
+              </kinesis-container>
+            </v-col>
+          </v-row>
+        </div>
+      </kinesis-container>
+    </v-container>
   </section>
 </template>
 
@@ -78,28 +58,21 @@ export default {
   components: {
     Rune
   },
-  data () {
-    return {
+  computed: {
+    screenShots () {
+      return this.$store.getters.screenShots
     }
   }
 }
 </script>
 <style scoped>
-.el:first-child{
-  position: relative;
-  z-index: 15;
-
-}
-.el{
-  position: absolute;
-  top: 0;
-  user-select: none;
+.gotop{
+z-index: 100 !important;
 }
 .scroll {
   width: 100%;
   position: relative;
   background-color:rgba(236, 240, 241,1.0);
-  text-align: center;
   overflow: hidden;
 }
 .scroll__description {
