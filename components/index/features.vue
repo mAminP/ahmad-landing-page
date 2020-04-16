@@ -14,7 +14,7 @@
         >
           <div class="circle circle-purple3" />
         </kinesis-element>
-        <feature v-for="feature in Features" :key="feature.title" :reverse="feature.reverse" :data="feature" />
+        <feature v-for="feature in Features" :id="feature.id" :key="feature.title" :reverse="feature.reverse" :data="feature" />
       </kinesis-container>
     </v-col>
   </v-row>

@@ -1,5 +1,5 @@
 <template>
-  <section class="parallax">
+  <section id="contact-us" class="parallax">
     <div class="parallax__container">
       <section>
         <contactUs />

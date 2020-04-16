@@ -1,12 +1,48 @@
 <template>
   <v-app>
-    <!-- <v-app-bar
+    <v-app-bar
       flat=""
       color="transparent"
-      app=""
+      dark=""
+      absolute=""
     >
-      <v-toolbar-title v-text="title" />
-    </v-app-bar> -->
+      <v-container>
+        <v-row no-gutters="" align="center">
+          <v-toolbar-title>
+            <h3>
+              {{ title }}
+            </h3>
+          </v-toolbar-title>
+
+          <v-spacer />
+          <v-btn v-for="item in items" :key="item.id" class="hidden-sm-and-down" text @click="$vuetify.goTo(`#${item.id}`)">
+            {{ item.text }}
+          </v-btn>
+          <v-menu bottom left>
+            <template v-slot:activator="{ on }">
+              <v-btn
+                dark
+                icon
+                class="hidden-md-and-up"
+                v-on="on"
+              >
+                <v-icon>mdi-dots-vertical</v-icon>
+              </v-btn>
+            </template>
+
+            <v-list>
+              <v-list-item
+                v-for="(item, i) in items"
+                :key="i"
+                @click="$vuetify.goTo(`#${item.id}`)"
+              >
+                <v-list-item-title>{{ item.text }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-row>
+      </v-container>
+    </v-app-bar>
     <nuxt />
 
     <v-footer dark="">
@@ -32,7 +68,25 @@
 export default {
   data () {
     return {
-      title: 'احمد'
+      title: 'هوبو شاپ',
+      items: [
+        {
+          id: 'features',
+          text: 'ویژگی ها'
+        },
+        {
+          id: 'moshtari',
+          text: ' مشتری'
+        },
+        {
+          id: 'froshande',
+          text: 'فروشنده'
+        },
+        {
+          id: 'contact-us',
+          text: 'تماس با ما'
+        }
+      ]
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="features">
     <v-row no-gutters="">
       <h2 v-text="topFeatures.title" />
     </v-row>
