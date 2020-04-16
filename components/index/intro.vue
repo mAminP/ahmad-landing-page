@@ -1,22 +1,22 @@
 <template>
   <kinesis-container class="bg text-center">
     <kinesis-element
-      :strength="isMobile ? 8 : 4"
+      :strength="isMobile ? 50 : 4"
       transform-origin="10% 20%"
     >
       <div class="circle circle-purple" />
     </kinesis-element>
-    <kinesis-element :strength="isMobile ? 20 : 10">
+    <kinesis-element :strength="isMobile ? 40 : 10">
       <div class="circle circle-purple1" />
     </kinesis-element>
 
-    <kinesis-element :strength="isMobile ? 40 :27">
+    <kinesis-element :strength="isMobile ? 80 :27">
       <div class="circle circle-purple2" />
     </kinesis-element>
-    <kinesis-element :strength="isMobile ? 30 :18">
+    <kinesis-element :strength="isMobile ? 90 :18">
       <div class="circle circle-purple3" />
     </kinesis-element>
-    <kinesis-element type="depth_inv" :strength="isMobile ? 15 :5">
+    <kinesis-element type="depth" :strength="isMobile ? 55 :5">
       <v-row justify="center" align="start">
         <v-col
           class="white--text my-3"
