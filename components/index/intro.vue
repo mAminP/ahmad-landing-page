@@ -22,7 +22,10 @@
       <div class="circle circle-purple5" />
     </kinesis-element>
 
-    <v-row justify="center" align="start">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1" d="M0,96L60,85.3C120,75,240,53,360,80C480,107,600,181,720,224C840,267,960,277,1080,245.3C1200,213,1320,139,1380,101.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" />
+    </svg>
+    <v-row justify="center" align="start" class="to-top">
       <v-col
         class="white--text my-3"
         order-lg="2"
@@ -32,7 +35,7 @@
         md="6"
         lg="4"
       >
-        <kinesis-element type="depth" :strength="isMobile ? 15 :5">
+        <kinesis-element transform-origin="50% 100%" type="depth" :strength="isMobile ? 15 :5">
           <kinesis-container event="scroll">
             <kinesis-element :strength="50" axis="y">
               <h2 v-text="intro.title" />
@@ -61,15 +64,11 @@
         md="4"
         offset-lg="1"
       >
-        <kinesis-element type="depth" :strength="isMobile ? 20 :5">
+        <kinesis-element type="depth" transform-origin="100% 50%" :strength="isMobile ? 20 :5">
           <v-img eager :src="intro.image" />
         </kinesis-element>
       </v-col>
     </v-row>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="#ffffff" fill-opacity="1" d="M0,96L60,85.3C120,75,240,53,360,80C480,107,600,181,720,224C840,267,960,277,1080,245.3C1200,213,1320,139,1380,101.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" />
-    </svg>
   </kinesis-container>
 </template>
 
@@ -110,18 +109,20 @@ svg{
   bottom: -10px;
   right: 0;
   left: 0;
-  z-index: -10;
 }
 .bg {
 background: rgb(2,0,36);
 background: linear-gradient(128deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba(0,212,255,1) 100%);
    padding: 5rem 0 2rem 0;
    position: relative;
+   overflow: hidden;
+
 }
 
 .circle {
   position: absolute;
   border-radius: 100%;
+
 }
 
 .circle.circle-purple {
