@@ -28,10 +28,10 @@ export default {
 .parallax {
   width: 100%;
   position: relative;
-  padding: 90px 0;
+  padding: 100px 0;
 }
 .parallax__container {
-  height: 55vh;
+  height: 70vh;
   position: relative;
   overflow: hidden;
 }
