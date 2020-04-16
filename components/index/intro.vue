@@ -2,31 +2,37 @@
   <kinesis-container class="bg text-center">
     <kinesis-element
       :strength="isMobile ? 50 : 4"
-      transform-origin="10% 20%"
     >
       <div class="circle circle-purple" />
     </kinesis-element>
-    <kinesis-element :strength="isMobile ? 40 : 10">
+    <kinesis-element :strength="isMobile ? -20 : -10">
       <div class="circle circle-purple1" />
     </kinesis-element>
 
-    <kinesis-element :strength="isMobile ? 80 :27">
+    <kinesis-element :strength="isMobile ? 56 :27">
       <div class="circle circle-purple2" />
     </kinesis-element>
-    <kinesis-element :strength="isMobile ? 90 :18">
+    <kinesis-element :strength="isMobile ? 32 :18">
       <div class="circle circle-purple3" />
     </kinesis-element>
-    <kinesis-element type="depth" :strength="isMobile ? 55 :5">
-      <v-row justify="center" align="start">
-        <v-col
-          class="white--text my-3"
-          order-lg="2"
-          order-md="2"
-          cols="10"
-          sm="8"
-          md="6"
-          lg="4"
-        >
+    <kinesis-element :strength="isMobile ? -40 :-20">
+      <div class="circle circle-purple4" />
+    </kinesis-element>
+    <kinesis-element :strength="isMobile ? -25 :-20">
+      <div class="circle circle-purple5" />
+    </kinesis-element>
+
+    <v-row justify="center" align="start">
+      <v-col
+        class="white--text my-3"
+        order-lg="2"
+        order-md="2"
+        cols="10"
+        sm="8"
+        md="6"
+        lg="4"
+      >
+        <kinesis-element type="depth" :strength="isMobile ? 15 :5">
           <kinesis-container event="scroll">
             <kinesis-element :strength="50" axis="y">
               <h2 v-text="intro.title" />
@@ -43,21 +49,23 @@
               </v-btn>
             </kinesis-element>
           </kinesis-container>
-        </v-col>
+        </kinesis-element>
+      </v-col>
 
-        <v-col
-          order-lg="1"
-          order-md="1"
-          cols="9"
-          sm="6"
-          lg="3"
-          md="4"
-          offset-lg="1"
-        >
+      <v-col
+        order-lg="1"
+        order-md="1"
+        cols="9"
+        sm="6"
+        lg="3"
+        md="4"
+        offset-lg="1"
+      >
+        <kinesis-element type="depth" :strength="isMobile ? 20 :5">
           <v-img eager :src="intro.image" />
-        </v-col>
-      </v-row>
-    </kinesis-element>
+        </kinesis-element>
+      </v-col>
+    </v-row>
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
       <path fill="#ffffff" fill-opacity="1" d="M0,96L60,85.3C120,75,240,53,360,80C480,107,600,181,720,224C840,267,960,277,1080,245.3C1200,213,1320,139,1380,101.3L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z" />
@@ -150,6 +158,22 @@ background: linear-gradient(128deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba
   height: 7vw;
   top: 1.5vh;
   left: 31%;
+}
+.circle.circle-purple4 {
+    background-color: #f2eafa;
+  opacity: 0.2;
+  width: 15vw;
+  height: 15vw;
+  top: 65vh;
+  left: 20%;
+}
+.circle.circle-purple5 {
+  border: 10px solid #f2eafa;
+  opacity: 0.2;
+  width: 25vw;
+  height: 25vw;
+  top: 70vh;
+  left: 70%;
 }
 img {
   width: 22rem;
