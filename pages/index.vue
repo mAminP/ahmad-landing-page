@@ -1,12 +1,27 @@
 <template>
-  <div>
-    <intro />
-    <topFeatures />
-    <features />
-    <screenShots />
-    <more-features />
-    <contact-us />
-  </div>
+  <v-content>
+    <v-row no-gutters="">
+      <v-col cols="12">
+        <intro />
+      </v-col>
+      <v-col cols="12">
+        <topFeatures />
+      </v-col>
+      <v-col cols="12">
+        <features />
+      </v-col>
+      <v-col cols="12">
+        <screenShots />
+      </v-col>
+      <v-col cols="12">
+        <more-features />
+      </v-col>
+      <v-col cols="12">
+        <!-- <contact-us /> -->
+        <parallex />
+      </v-col>
+    </v-row>
+  </v-content>
 </template>
 
 <script>
@@ -16,6 +31,7 @@ import features from '@/components/index/features'
 import moreFeatures from '@/components/index/moreFeatures'
 import contactUs from '@/components/index/contactUs'
 import topFeatures from '@/components/index/topFeatures'
+import parallex from '@/components/index/parallax'
 
 export default {
   components: {
@@ -24,7 +40,8 @@ export default {
     features,
     moreFeatures,
     contactUs,
-    topFeatures
+    topFeatures,
+    parallex
   }
 }
 </script>

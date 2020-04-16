@@ -1,5 +1,5 @@
 <template>
-  <v-container class="my-8">
+  <v-container>
     <v-row no-gutters="">
       <h2 v-text="topFeatures.title" />
     </v-row>
@@ -15,8 +15,8 @@
           >
             <v-row class="px-3">
               <v-col
-                v-for="card in topFeatures.cards"
-                :key="card.title"
+                v-for="(card,index) in topFeatures.cards"
+                :key="index"
                 cols="12"
                 lg="6"
                 md="12"

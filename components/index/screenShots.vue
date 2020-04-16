@@ -70,13 +70,11 @@ export default {
 z-index: 100 !important;
 }
 .scroll {
-  width: 100%;
   position: relative;
   background-color:rgba(236, 240, 241,1.0);
   overflow: hidden;
 }
 .scroll__description {
-  display: table;
   margin: auto;
   padding: 2rem 0;
 }

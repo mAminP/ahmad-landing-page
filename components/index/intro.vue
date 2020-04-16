@@ -87,6 +87,7 @@ svg{
 background: rgb(2,0,36);
 background: linear-gradient(128deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba(0,212,255,1) 100%);
    padding: 5rem 0 2rem 0;
+   position: relative;
 }
 
 .circle {
@@ -99,8 +100,8 @@ background: linear-gradient(128deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba
   opacity: 0.2;
   width: 10vw;
   height: 10vw;
-  left: 10vh;
   top: 10vh;
+  left: 5%;
 }
 
 .circle.circle-purple1 {
@@ -108,8 +109,8 @@ background: linear-gradient(128deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba
   opacity: 0.1;
   width: 10vw;
   height: 10vw;
-  right: -5vh;
   top: -20vh;
+  right: 3%;
 
 }
 .circle.circle-purple2 {
@@ -117,8 +118,8 @@ background: linear-gradient(128deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba
   opacity: 0.1;
   width: 8vw;
   height: 8vw;
-  right: 90vh;
   top: 30vh;
+  right: 40%;
 }
 
 .circle.circle-purple3 {
@@ -126,8 +127,8 @@ background: linear-gradient(128deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 31%, rgba
   opacity: 0.2;
   width: 7vw;
   height: 7vw;
-  left: 60vh;
   top: 1.5vh;
+  left: 31%;
 }
 img {
   width: 22rem;

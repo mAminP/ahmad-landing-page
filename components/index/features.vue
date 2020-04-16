@@ -1,19 +1,23 @@
 <template>
-  <kinesis-container event="scroll">
-    <kinesis-element
-      :strength="500"
-      axis="y"
-    >
-      <div class="circle circle-purple2" />
-    </kinesis-element>
-    <kinesis-element
-      :strength="-500"
-      axis="y"
-    >
-      <div class="circle circle-purple3" />
-    </kinesis-element>
-    <feature v-for="feature in Features" :key="feature.title" :reverse="feature.reverse" :data="feature"/>
-  </kinesis-container>
+  <v-row no-gutters="">
+    <v-col cols="12">
+      <kinesis-container event="scroll">
+        <kinesis-element
+          :strength="500"
+          axis="y"
+        >
+          <div class="circle circle-purple2" />
+        </kinesis-element>
+        <kinesis-element
+          :strength="-500"
+          axis="y"
+        >
+          <div class="circle circle-purple3" />
+        </kinesis-element>
+        <feature v-for="feature in Features" :key="feature.title" :reverse="feature.reverse" :data="feature" />
+      </kinesis-container>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

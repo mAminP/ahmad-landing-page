@@ -7,9 +7,8 @@
     >
       <v-toolbar-title v-text="title" />
     </v-app-bar> -->
-    <v-content>
-      <nuxt />
-    </v-content>
+    <nuxt />
+
     <v-footer dark="">
       <v-container class="pt-0">
         <v-row class="mt-n12">
@@ -21,7 +20,7 @@
         </v-row>
         <v-row class="mt-4" align="center" justify="center">
           <span>
-            حقوق محفوظ است
+            طراحی شده با ❤ توسط محمد امین پاسبان
           </span>
         </v-row>
       </v-container>

@@ -1,118 +1,75 @@
 <template>
-  <v-parallax
-    dark
-    src="https://www.kciteam.com/wp-content/uploads/2017/02/contact-form-background-2.jpg"
-  >
-    <v-container>
-      <v-row
-        align="start"
-        justify="start"
-      >
-        <v-col class="">
-          <h2 class="font-aviny">
-            تماس با ما
-          </h2>
-          <p class="text-justify font-iranYekanWebRegular">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که شامل حروفچینی گیرد.
-          </p>
-          <p class="text-justify font-iranYekanWebRegular">
-            شماره تماس : 09101234567
-          </p>
-          <p class="text-justify font-iranYekanWebRegular">
-            ایمیل : email@domain.com
-          </p>
-        </v-col>
-        <v-col class="text-center">
-          <v-card class="pa-3" color="rgba(255,255,255,0.85)" flat="">
-            <v-form
-              ref="form"
-              v-model="valid"
-              lazy-validation
-            >
-              <v-row no-gutters="">
-                <v-col class="mx-1">
-                  <v-text-field
-                    v-model="name"
-                    outlined=""
-                    :rules="nameRules"
-                    label="نام و نام خانوادگی"
-                    required
-                  />
-                </v-col>
-                <v-col class="mx-1">
-                  <v-text-field
-                    v-model="email"
-                    outlined=""
-                    :rules="emailRules"
-                    label="شماره موبایل"
-                    required
-                  />
-                </v-col>
-              </v-row>
+  <v-container>
+    <v-row
+      align="start"
+      justify="start"
+    >
+      <v-col cols="12" lg="6" md="6" sm="12">
+        <v-row no-gutters="" align="center" justify="space-between">
+          <h2 v-text="contactUs.title" />
+          <v-btn depressed="" color="grey" large="" dark="" @click="dialog = true">
+            <v-icon left="">
+              mdi-email-variant
+            </v-icon>
 
-              <v-row no-gutters="">
-                <v-col class="mx-1">
-                  <v-text-field
-                    v-model="name"
-                    outlined=""
-                    :rules="nameRules"
-                    label="موضوع"
-                    required
-                  />
-                </v-col>
-              </v-row>
-              <v-row no-gutters="">
-                <v-col class="mx-1">
-                  <v-textarea
-                    v-model="name"
-                    outlined=""
-                    height="120"
-                    :rules="nameRules"
-                    label="متن پیام"
-                    required
-                  />
-                </v-col>
-              </v-row>
-              <v-btn
-                :disabled="!valid"
-                color="success"
-                block=""
-                class="mx-1"
-                outlined=""
-                @click="validate"
-              >
-                ارسال
-              </v-btn>
-            </v-form>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-parallax>
+            ارسال تیکت
+          </v-btn>
+        </v-row>
+        <p class="text-justify" v-text="contactUs.paragraph" />
+        <v-row v-for="(way, index) in contactUs.ways" :key="index" no-gutters="" align="center" justify="start">
+          <p v-text="way" />
+        </v-row>
+      </v-col>
+      <v-col
+        class="hidden-sm-and-down text-center"
+        cols="12"
+        lg="5"
+        md="5"
+        sm="12"
+        align-self="center"
+      >
+        <v-row align="center" justify="center">
+          <v-col v-for="(svg,index) in contactUs.svgs" :key="index" cols="3">
+            <v-img aspect-ratio="1" eager="" :src="svg" />
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+
+    <v-dialog v-model="dialog" persistent max-width="600px">
+      <v-card>
+        <v-row align="center" no-gutters="">
+          <v-col>
+            <v-btn color="red darken-1" icon="" @click="dialog = false">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+        <v-card-text>
+          <span>ارسال تیکت</span>
+        </v-card-text>
+        <v-card-text>
+          <Cform />
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+  </v-container>
 </template>
 
 <script>
+import Cform from '@/components/index/form'
 export default {
+  components: {
+    Cform
+  },
   data: () => ({
-    valid: true,
-    name: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
-    ],
-    email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
-    ]
+    dialog: false
   }),
-
-  methods: {
-    validate () {
-      this.$refs.form.validate()
+  computed: {
+    contactUs () {
+      return this.$store.getters.contactUs
     }
   }
-
 }
 </script>
 
