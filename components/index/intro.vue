@@ -1,22 +1,22 @@
 <template>
   <kinesis-container class="bg text-center">
     <kinesis-element
-      :strength="4"
+      :strength="isMobile ? 8 : 4"
       transform-origin="10% 20%"
     >
       <div class="circle circle-purple" />
     </kinesis-element>
-    <kinesis-element :strength="10">
+    <kinesis-element :strength="isMobile ? 20 : 10">
       <div class="circle circle-purple1" />
     </kinesis-element>
 
-    <kinesis-element :strength="27">
+    <kinesis-element :strength="isMobile ? 40 :27">
       <div class="circle circle-purple2" />
     </kinesis-element>
-    <kinesis-element :strength="18">
+    <kinesis-element :strength="isMobile ? 30 :18">
       <div class="circle circle-purple3" />
     </kinesis-element>
-    <kinesis-element type="depth_inv" :strength="5">
+    <kinesis-element type="depth_inv" :strength="isMobile ? 15 :5">
       <v-row justify="center" align="start">
         <v-col
           class="white--text my-3"
@@ -28,13 +28,13 @@
           lg="4"
         >
           <kinesis-container event="scroll">
-            <kinesis-element :strength="70" axis="y">
+            <kinesis-element :strength="50" axis="y">
               <h2 v-text="intro.title" />
             </kinesis-element>
-            <kinesis-element :strength="80" axis="y">
+            <kinesis-element :strength="70" axis="y">
               <p class="text-justify" v-text="intro.paragraph" />
             </kinesis-element>
-            <kinesis-element :strength="90" axis="y">
+            <kinesis-element :strength="80" axis="y">
               <v-btn class="font-iranYekanWebRegular" large="" outlined="" color="white">
                 <v-icon left="">
                   mdi-download
@@ -67,11 +67,32 @@
 
 <script>
 export default {
+  data: () => ({
+    isMobile: false
+  }),
   computed: {
     intro () {
       return this.$store.getters.intro
     }
+  },
+
+  beforeDestroy () {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('resize', this.onResize, { passive: true })
+    }
+  },
+
+  mounted () {
+    this.onResize()
+    window.addEventListener('resize', this.onResize, { passive: true })
+  },
+
+  methods: {
+    onResize () {
+      this.isMobile = window.innerWidth < 960
+    }
   }
+
 }
 </script>
 
