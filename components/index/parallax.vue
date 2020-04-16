@@ -31,7 +31,7 @@ export default {
   padding: 100px 0;
 }
 .parallax__container {
-  height: 70vh;
+  height: 90ex;
   position: relative;
   overflow: hidden;
 }
@@ -58,7 +58,7 @@ export default {
 }
 .parallax__content {
   width: 100%;
-  height: 200vh;
+  height: 200ex;
   position: absolute;
   top: 50%;
   left: 0;

@@ -20,7 +20,7 @@
         </v-row>
         <v-row class="mt-4" align="center" justify="center">
           <span>
-            طراحی شده با ❤ توسط محمد امین پاسبان
+            طراحی شده با ❤️ توسط محمد امین پاسبان
           </span>
         </v-row>
       </v-container>

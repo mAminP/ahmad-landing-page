@@ -35,7 +35,7 @@
         md="6"
         lg="4"
       >
-        <kinesis-element transform-origin="50% 50%" type="depth" :strength="isMobile ? 3 :5">
+        <kinesis-element class="mt-n12" transform-origin="50% 50%" type="depth" :strength="isMobile ? 3 :5">
           <kinesis-container event="scroll">
             <kinesis-element :strength="50" axis="y">
               <h2 v-text="intro.title" />
@@ -64,7 +64,7 @@
         md="4"
         offset-lg="1"
       >
-        <kinesis-element type="depth" transform-origin="50% 50%" :strength="isMobile ? 8 :5">
+        <kinesis-element type="depth" transform-origin="50% 50%" :strength="isMobile ? 3 :5">
           <v-img eager :src="intro.image" />
         </kinesis-element>
       </v-col>
