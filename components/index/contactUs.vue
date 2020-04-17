@@ -35,7 +35,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-bottom-sheet v-model="dialog" inset>
+    <v-bottom-sheet v-model="dialog" inset="">
       <v-sheet class="pa-2">
         <v-row align="center" no-gutters="">
           <v-col>

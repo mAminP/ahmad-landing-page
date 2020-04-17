@@ -8,41 +8,44 @@
       <v-col cols="12">
         <span>ارسال تیکت</span>
       </v-col>
-      <v-col cols="12" lg="6" md="6" sm="6">
+      <v-col cols="12" lg="6" md="6" sm="6" class="py-1">
         <v-text-field
           v-model="formData.name"
           outlined=""
           :rules="nameRules"
           label="نام و نام خانوادگی"
           required
+          dense=""
           :disabled="loading"
         />
       </v-col>
-      <v-col cols="12" lg="6" md="6" sm="6">
+      <v-col cols="12" lg="6" md="6" sm="6" class="py-1">
         <v-text-field
           v-model="formData.phoneNumber"
           outlined=""
+          dense=""
           :rules="phoneNumberRules"
           label="شماره موبایل"
           required
           :disabled="loading"
         />
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" class="py-1">
         <v-text-field
           v-model="formData.Subject"
           outlined=""
+          dense=""
           :disabled="loading"
           :rules="SubjectRules"
           label="موضوع"
           required
         />
       </v-col>
-      <v-col cols="12">
+      <v-col cols="12" class="py-1">
         <v-textarea
           v-model="formData.text"
+          dense=""
           outlined=""
-          height="120"
           :disabled="loading"
           :rules="textRules"
           label="متن پیام"
@@ -50,7 +53,7 @@
         />
       </v-col>
     </v-row>
-    <v-row align="center" justify="end">
+    <v-row align="center" justify="end" no-gutters="">
       <v-btn
         :disabled="!valid | loading"
         :loading="loading"
