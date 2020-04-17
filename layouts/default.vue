@@ -8,12 +8,6 @@
     >
       <v-container>
         <v-row no-gutters="" align="center">
-          <v-toolbar-title>
-            <h3>
-              {{ title }}
-            </h3>
-          </v-toolbar-title>
-
           <v-spacer />
           <v-btn v-for="item in items" :key="item.id" class="hidden-sm-and-down" text @click="$vuetify.goTo(`#${item.id}`)">
             {{ item.text }}
@@ -54,10 +48,17 @@
             </v-row>
           </v-sheet>
         </v-row>
-        <v-row class="mt-4" align="center" justify="center">
-          <span>
-            طراحی شده با ❤️ توسط محمد امین پاسبان
-          </span>
+        <v-row class="mt-3 text-center" align="center" no-gutters="" justify="center">
+          <v-col cols="12" align-self="center">
+            <p class="endspan ma-0 py-1">
+              کلیه حقوق برای هوبوشاپ محفوظ است. <span>&copy; {{ new Date().getFullYear() }}</span>
+            </p>
+          </v-col>
+          <v-col cols="12" align-self="center">
+            <p class="endspan ma-0 py-1">
+              طراحی شده با ❤️ توسط محمد امین پاسبان
+            </p>
+          </v-col>
         </v-row>
       </v-container>
     </v-footer>
@@ -68,7 +69,6 @@
 export default {
   data () {
     return {
-      title: 'هوبو شاپ',
       items: [
         {
           id: 'features',
@@ -76,11 +76,11 @@ export default {
         },
         {
           id: 'moshtari',
-          text: ' مشتری'
+          text: 'کاربران'
         },
         {
           id: 'froshande',
-          text: 'فروشنده'
+          text: 'فروشندگان'
         },
         {
           id: 'contact-us',
@@ -96,5 +96,8 @@ export default {
 background: rgb(2,0,36);
 background: linear-gradient(0deg, #2c3e50 0%,#34495e 100%);
 
+}
+.endspan{
+  font-size: 0.8em;
 }
 </style>

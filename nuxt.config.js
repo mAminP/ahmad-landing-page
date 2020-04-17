@@ -6,12 +6,11 @@ export default {
   ** Headers of the page
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || '',
+    title: 'هوبو شاپ' || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: 'با توجه به سیر صعودی و پیشرفت روزافزون فناوری اطلاعات در دنیا که همه ی جهان معاصررا تحت تاثیر خود قرار داده است و صنعت و تجارت هم ازاین قاعده مستثنی نیست امروزه هر فروشگاهی درتلاش برای به کارگیری ازاین فناوری وخدمات منحصربه فردآن درروندتوسعه کسب وکار خود است. هوبوشاب نیز درامر تحقق واراعه خدمات بستری رافراهم کرده است تاهم فروشگاها بتوانند محصولات خود را عرضه نمایندوهم مردم بتوانندبا حداقل زمان وکمترین هزینه از ویترین فروشگاهها دیدن کنند و بهترین و مناسب ترین انتخاب خود را داشته باشند. هدف اصلی ما دیده شدن فروشگاهها و صرفه جویی در وقت هزینه ی مردم عزیزو گرانقدر است.با هوبوشاپ سرعت ،کیفیت،امنیت و صرفه جویی در زمان را تجربه کنید' || '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

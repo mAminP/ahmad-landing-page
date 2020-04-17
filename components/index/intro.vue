@@ -35,15 +35,15 @@
         md="6"
         lg="4"
       >
-        <kinesis-element class="mt-n12" transform-origin="50% 50%" type="depth" :strength="isMobile ? 3 :5">
+        <kinesis-element transform-origin="50% 50%" type="depth" :strength="isMobile ? 3 :5">
           <kinesis-container event="scroll">
-            <kinesis-element :strength="50" axis="y">
+            <kinesis-element :strength="80" axis="y">
               <h2 v-text="intro.title" />
             </kinesis-element>
-            <kinesis-element :strength="70" axis="y">
-              <p class="text-justify" v-text="intro.paragraph" />
+            <kinesis-element :strength="90" axis="y">
+              <p class="text-center" v-text="intro.paragraph" />
             </kinesis-element>
-            <kinesis-element :strength="80" axis="y">
+            <kinesis-element :strength="100" axis="y">
               <v-btn class="font-iranYekanWebRegular" large="" outlined="" color="white">
                 <v-icon left="">
                   mdi-download

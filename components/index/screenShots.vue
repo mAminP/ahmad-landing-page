@@ -71,7 +71,7 @@ z-index: 100 !important;
 }
 .scroll {
   position: relative;
-  background-color:rgba(236, 240, 241,1.0);
+  background-color:rgb(245, 251, 255);
   overflow: hidden;
 }
 .scroll__description {

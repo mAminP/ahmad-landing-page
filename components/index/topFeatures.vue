@@ -13,23 +13,24 @@
             :strength="60"
             axis="y"
           >
-            <v-row class="px-3">
+            <v-row class="px-3" align="stretch" justify="center">
               <v-col
                 v-for="(card,index) in topFeatures.cards"
                 :key="index"
+                align-self="stretch"
                 cols="12"
                 lg="6"
                 md="12"
                 sm="6"
               >
-                <v-card>
+                <v-card flat="" class="fill-height">
                   <v-row no-gutters="" align="center">
-                    <v-icon x-large="" class="mx-5">
-                      mdi-plus
-                    </v-icon>
-                    <v-col>
+                    <v-col align-self="center" class="pa-2" cols="3">
+                      <v-img aspect-ratio="1" :src="card.svg" />
+                    </v-col>
+                    <v-col align-self="center">
                       <h3 class="pr-3 pt-2" v-text="card.title" />
-                      <v-card-text class="pt-1 text-justify" v-text="card.text" />
+                      <v-card-text class="pt-1" v-text="card.text" />
                     </v-col>
                   </v-row>
                 </v-card>

@@ -16,7 +16,7 @@
       :style="
         `width: ${scale(index)}px; height: ${scale(
           index
-        )}px; box-shadow: inset 0 0 0 ${border()}px rgba(189, 195, 199,0.2); top: ${position(
+        )}px; box-shadow: inset 0 0 0 ${border()}px rgba(225, 243, 255,0.5); top: ${position(
           scale(index)
         )}px; left: ${position(scale(index))}px; z-index: ${parts - index};`
       "
@@ -55,7 +55,7 @@ export default {
 }
 .rune span {
   display: block;
-  background-color:rgba(236, 240, 241,1.0);
+  background-color:rgba(245, 251, 255,1.0);
   border-radius: 50%;
   position: absolute;
 }

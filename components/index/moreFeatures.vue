@@ -1,13 +1,22 @@
 <template>
   <v-container>
-    <v-row class="my-12" align="center" justify="center">
-      <v-col v-for="(i,index) in moreFeatures" :key="index" cols="12" lg="4" md="4">
+    <v-row class="my-12" align="start" align-content="stretch" justify="center">
+      <v-col
+        v-for="(i,index) in moreFeatures"
+        :key="index"
+        align-self="stretch"
+        cols="12"
+        lg="4"
+        md="4"
+      >
         <kinesis-container event="scroll">
           <kinesis-element type="scale" :strength="-3">
             <v-card class="text-center" flat="">
-              <v-icon x-large="">
-                mdi-plus
-              </v-icon>
+              <v-row justify="center" align="center" no-gutters="">
+                <v-col align-self="center" cols="3">
+                  <v-img aspect-ratio="1" :src="i.svg" />
+                </v-col>
+              </v-row>
               <v-card-text class="text-justify" v-text="i.text" />
             </v-card>
           </kinesis-element>
