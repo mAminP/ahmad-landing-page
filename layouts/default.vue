@@ -48,27 +48,31 @@
     </v-snackbar>
     <v-footer dark="">
       <v-container class="pt-0">
-        <v-row class="mt-n10">
+        <v-row class="mt-n12 mt-md-n9 mt-lg-n9">
           <v-card
             class="flex"
             dark=""
           >
-            <v-card-title>
-              <span class="smaller">در شبکه های اجتماعی با ما همراه باشد</span>
-              <v-spacer />
-
-              <v-btn
-                v-for="icon in icons"
-                :key="icon"
-                class="mx-4"
-                dark
-                icon
-              >
-                <v-icon size="24px">
-                  {{ icon }}
-                </v-icon>
-              </v-btn>
-            </v-card-title>
+            <v-row justify="center" align="center">
+              <v-col cols="12" lg="6" md="6" sm="12" class="text-lg-right text-md-right text-center">
+                <span
+                  class="mx-2"
+                >در شبکه های اجتماعی با ما همراه باشد</span>
+              </v-col>
+              <v-col lg="6" md="6" sm="12" class="text-lg-left text-md-left text-center">
+                <v-btn
+                  v-for="icon in icons"
+                  :key="icon"
+                  class="mx-2"
+                  dark
+                  icon
+                >
+                  <v-icon size="24px">
+                    {{ icon }}
+                  </v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
           </v-card>
         </v-row>
         <v-row class="mt-3 text-center" align="center" no-gutters="" justify="center">
@@ -142,6 +146,5 @@ background: linear-gradient(0deg, #2c3e50 0%,#34495e 100%);
   font-size: 0.8em;
 }
 .smaller{
-  font-size: 0.75em;
 }
 </style>
