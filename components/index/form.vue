@@ -55,7 +55,7 @@
     </v-row>
     <v-row align="center" justify="end" no-gutters="">
       <v-btn
-        :disabled="!valid | loading"
+        :disabled="!valid || loading"
         :loading="loading"
         color="success"
         class="mx-1"
