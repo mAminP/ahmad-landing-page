@@ -4,60 +4,67 @@
     v-model="valid"
     lazy-validation
   >
-    <v-row no-gutters="">
-      <v-col class="mx-1">
+    <v-row align="center" justify="center">
+      <v-col cols="12">
+        <span>ارسال تیکت</span>
+      </v-col>
+      <v-col cols="12" lg="6" md="6" sm="6">
         <v-text-field
-          v-model="name"
+          v-model="formData.name"
           outlined=""
           :rules="nameRules"
           label="نام و نام خانوادگی"
           required
+          :disabled="loading"
         />
       </v-col>
-      <v-col class="mx-1">
+      <v-col cols="12" lg="6" md="6" sm="6">
         <v-text-field
-          v-model="email"
+          v-model="formData.phoneNumber"
           outlined=""
-          :rules="emailRules"
+          :rules="phoneNumberRules"
           label="شماره موبایل"
           required
+          :disabled="loading"
         />
       </v-col>
-    </v-row>
-
-    <v-row no-gutters="">
-      <v-col class="mx-1">
+      <v-col cols="12">
         <v-text-field
-          v-model="name"
+          v-model="formData.Subject"
           outlined=""
-          :rules="nameRules"
+          :disabled="loading"
+          :rules="SubjectRules"
           label="موضوع"
           required
         />
       </v-col>
-    </v-row>
-    <v-row no-gutters="">
-      <v-col class="mx-1">
+      <v-col cols="12">
         <v-textarea
-          v-model="name"
+          v-model="formData.text"
           outlined=""
           height="120"
-          :rules="nameRules"
+          :disabled="loading"
+          :rules="textRules"
           label="متن پیام"
           required
         />
       </v-col>
     </v-row>
-    <v-btn
-      :disabled="!valid"
-      color="success"
-      block=""
-      class="mx-1"
-      outlined=""
-      @click="validate"
-    >
-      ارسال
-    </v-btn>
+    <v-row align="center" justify="end">
+      <v-btn
+        :disabled="!valid | loading"
+        :loading="loading"
+        color="success"
+        class="mx-1"
+        depressed=""
+        @click="validate"
+      >
+        <v-icon left="">
+          mdi-email-send-outline
+        </v-icon>
+        ارسال
+      </v-btn>
+    </v-row>
   </v-form>
 </template>
 
@@ -65,20 +72,41 @@
 export default {
   data: () => ({
     valid: true,
-    name: '',
+    loading: false,
+    formData: {
+      name: '',
+      phoneNumber: '',
+      Subject: '',
+      text: ''
+    },
     nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+      v => !!v || 'لطفا نام و نام خانوادگی خود را وارد کنید'
     ],
-    email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+    phoneNumberRules: [
+      v => !!v || 'لطفا شماره موبایل خود را وارد کیند',
+      v => /^(\+98|0|98)?9\d{9}$/g.test(v) || 'فرمت شماره موبایل وارد شده صحیح نمی‌باشد'
+    ],
+    SubjectRules: [
+      v => !!v || 'لطفا موضوع تیکت را وارد کنید'
+    ],
+    textRules: [
+      v => !!v || 'لطفا پیام خود را وارد کنید'
     ]
   }),
   methods: {
     validate () {
-      this.$refs.form.validate()
+      if (this.$refs.form.validate()) {
+        this.loading = true
+        setTimeout(() => {
+          this.$nuxt.$emit('snackBar', { text: 'پیام شما با موفقیت ارسال شد .', color: 'success' })
+          this.formData = {
+            Subject: '',
+            text: ''
+          }
+          this.$nuxt.$emit('closeDialog')
+          this.loading = false
+        }, 2000)
+      }
     }
   }
 }

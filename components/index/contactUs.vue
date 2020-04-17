@@ -29,15 +29,14 @@
         align-self="center"
       >
         <v-row align="center" justify="center">
-          <v-col v-for="(svg,index) in contactUs.svgs" :key="index" cols="3">
+          <v-col v-for="(svg,index) in contactUs.svgs" :key="index" class="pa-1" cols="3">
             <v-img aspect-ratio="1" eager="" :src="svg" />
           </v-col>
         </v-row>
       </v-col>
     </v-row>
-
-    <v-dialog v-model="dialog" persistent max-width="600px">
-      <v-card>
+    <v-bottom-sheet v-model="dialog" inset>
+      <v-sheet class="pa-2">
         <v-row align="center" no-gutters="">
           <v-col>
             <v-btn color="red darken-1" icon="" @click="dialog = false">
@@ -45,14 +44,13 @@
             </v-btn>
           </v-col>
         </v-row>
-        <v-card-text>
-          <span>ارسال تیکت</span>
-        </v-card-text>
-        <v-card-text>
-          <Cform />
-        </v-card-text>
-      </v-card>
-    </v-dialog>
+        <v-row align="center" justify="center">
+          <v-col cols="12" lg="8" md="8" sm="10">
+            <Cform />
+          </v-col>
+        </v-row>
+      </v-sheet>
+    </v-bottom-sheet>
   </v-container>
 </template>
 
@@ -69,6 +67,11 @@ export default {
     contactUs () {
       return this.$store.getters.contactUs
     }
+  },
+  created () {
+    this.$nuxt.$on('closeDialog', () => {
+      this.dialog = false
+    })
   }
 }
 </script>

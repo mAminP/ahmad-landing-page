@@ -39,6 +39,13 @@
     </v-app-bar>
     <nuxt />
 
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="timeout"
+      :color="color"
+    >
+      {{ text }}
+    </v-snackbar>
     <v-footer dark="">
       <v-container class="pt-0">
         <v-row class="mt-n12">
@@ -69,6 +76,10 @@
 export default {
   data () {
     return {
+      snackbar: false,
+      text: '',
+      color: '',
+      timeout: 2000,
       items: [
         {
           id: 'features',
@@ -88,6 +99,13 @@ export default {
         }
       ]
     }
+  },
+  created () {
+    this.$nuxt.$on('snackBar', (data) => {
+      this.text = data.text
+      this.color = data.color
+      this.snackbar = true
+    })
   }
 }
 </script>
