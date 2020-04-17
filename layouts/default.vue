@@ -48,12 +48,28 @@
     </v-snackbar>
     <v-footer dark="">
       <v-container class="pt-0">
-        <v-row class="mt-n12">
-          <v-sheet height="300" width="100%" elevation="12">
-            <v-row no-gutters="" align="center" justify="center" class="fill-height">
-              فوتر
-            </v-row>
-          </v-sheet>
+        <v-row class="mt-n10">
+          <v-card
+            class="flex"
+            dark=""
+          >
+            <v-card-title>
+              <span class="smaller">در شبکه های اجتماعی با ما همراه باشد</span>
+              <v-spacer />
+
+              <v-btn
+                v-for="icon in icons"
+                :key="icon"
+                class="mx-4"
+                dark
+                icon
+              >
+                <v-icon size="24px">
+                  {{ icon }}
+                </v-icon>
+              </v-btn>
+            </v-card-title>
+          </v-card>
         </v-row>
         <v-row class="mt-3 text-center" align="center" no-gutters="" justify="center">
           <v-col cols="12" align-self="center">
@@ -80,6 +96,13 @@ export default {
       text: '',
       color: '',
       timeout: 2000,
+      icons: [
+        'mdi-facebook',
+        'mdi-twitter',
+        'mdi-google-plus',
+        'mdi-linkedin',
+        'mdi-instagram'
+      ],
       items: [
         {
           id: 'features',
@@ -117,5 +140,8 @@ background: linear-gradient(0deg, #2c3e50 0%,#34495e 100%);
 }
 .endspan{
   font-size: 0.8em;
+}
+.smaller{
+  font-size: 0.75em;
 }
 </style>
