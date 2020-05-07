@@ -4,10 +4,10 @@
       <h2 v-text="topFeatures.title" />
     </v-row>
     <v-row no-gutters="" align="start" justify="start">
-      <v-col cols="12" lg="4" md="4" sm="12">
+      <v-col cols="12" lg="4" md="5" sm="12">
         <p class="pl-lg-3 text-justify" v-text="topFeatures.paragraph" />
       </v-col>
-      <v-col cols="12" lg="8" md="8" sm="12">
+      <v-col cols="12" lg="8" md="7" sm="12">
         <kinesis-container event="scroll">
           <kinesis-element
             :strength="60"
