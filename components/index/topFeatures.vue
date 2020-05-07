@@ -25,7 +25,14 @@
               >
                 <v-card flat="" class="fill-height">
                   <v-row no-gutters="" align="center">
-                    <v-col align-self="center" class="pa-2" cols="3">
+                    <v-col
+                      align-self="center"
+                      class="pa-2"
+                      cols="3"
+                      lg="3"
+                      md="2"
+                      sm="3"
+                    >
                       <v-img aspect-ratio="1" :src="card.svg" />
                     </v-col>
                     <v-col align-self="center">
