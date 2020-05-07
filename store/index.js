@@ -1,6 +1,7 @@
 export const state = () => ({
   intro: {
     title: 'هوبو شاپ',
+    link: 'https://hoboshopdl.ir/download_app/HoboShop.apk',
     paragraph: 'فرصتی برای دیده شدن کسب و کار شما',
     image: require('@/static/images/temp1.png')
   },
@@ -105,6 +106,23 @@ export const state = () => ({
     ]
   }
 })
+
+export const actions = {
+  async sendMessage (VuexContext, data) {
+    return await new Promise((resolve, reject) => {
+      return this.$axios.post('contact_us', data, {
+        headers: {
+          public_key: 'ngJP334ukr2Iyt6U7YFpLzrRqH7JgLyHtmE0j5yvmUlWaXCRz7ZwBnjS7Q8a7ltt5Jreyw28ntYhOIgwW6SH6qsdCDBkPRu9ZsDn'
+        }
+      }).then((res) => {
+        resolve()
+      }).catch((e) => {
+        reject(e)
+      }
+      )
+    })
+  }
+}
 
 export const getters = {
   intro (state) {

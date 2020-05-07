@@ -21,7 +21,7 @@
       </v-col>
       <v-col cols="12" lg="6" md="6" sm="6" class="py-1">
         <v-text-field
-          v-model="formData.phoneNumber"
+          v-model="formData.phone"
           outlined=""
           dense=""
           :rules="phoneNumberRules"
@@ -32,7 +32,7 @@
       </v-col>
       <v-col cols="12" class="py-1">
         <v-text-field
-          v-model="formData.Subject"
+          v-model="formData.subject"
           outlined=""
           dense=""
           :disabled="loading"
@@ -78,8 +78,8 @@ export default {
     loading: false,
     formData: {
       name: '',
-      phoneNumber: '',
-      Subject: '',
+      phone: '',
+      subject: '',
       text: ''
     },
     nameRules: [
@@ -87,7 +87,8 @@ export default {
     ],
     phoneNumberRules: [
       v => !!v || 'لطفا شماره موبایل خود را وارد کیند',
-      v => /^(\+98|0|98)?9\d{9}$/g.test(v) || 'فرمت شماره موبایل وارد شده صحیح نمی‌باشد'
+      v => /^()?09\d{9}$/g.test(v) || 'فرمت شماره موبایل وارد شده صحیح نمی‌باشد'
+      // v => /^(\+98|0|98)?9\d{9}$/g.test(v) || 'فرمت شماره موبایل وارد شده صحیح نمی‌باشد'
     ],
     SubjectRules: [
       v => !!v || 'لطفا موضوع تیکت را وارد کنید'
@@ -97,18 +98,21 @@ export default {
     ]
   }),
   methods: {
-    validate () {
+    async validate () {
       if (this.$refs.form.validate()) {
         this.loading = true
-        setTimeout(() => {
-          this.$nuxt.$emit('snackBar', { text: 'پیام شما با موفقیت ارسال شد .', color: 'success' })
-          this.formData = {
-            Subject: '',
-            text: ''
+        return await this.$store.dispatch('sendMessage', this.formData).then(
+          () => {
+            this.$nuxt.$emit('snackBar', { text: 'پیام شما با موفقیت ارسال شد .', color: 'success' })
+            this.$nuxt.$emit('closeDialog')
           }
-          this.$nuxt.$emit('closeDialog')
+        ).catch(
+          (e) => {
+            this.$nuxt.$emit('snackBar', { text: 'متاسفانه پیام ارسال نشد . لطفا مجددا امتحان نمایید .', color: 'error' })
+          }
+        ).finally(() => {
           this.loading = false
-        }, 2000)
+        })
       }
     }
   }

@@ -13,6 +13,7 @@
     "heroku-postBuild": "npm run build"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.10.3",
     "nuxt": "^2.0.0",
     "vue-kinesis": "^1.1.5"
   },

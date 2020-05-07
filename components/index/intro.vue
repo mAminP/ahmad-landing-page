@@ -44,7 +44,7 @@
               <p class="text-center" v-text="intro.paragraph" />
             </kinesis-element>
             <kinesis-element :strength="100" axis="y">
-              <v-btn class="font-iranYekanWebRegular" large="" outlined="" color="white">
+              <v-btn class="font-iranYekanWebRegular" large="" :href="intro.link" outlined="" color="white">
                 <v-icon left="">
                   mdi-download
                 </v-icon>
