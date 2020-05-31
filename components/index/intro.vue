@@ -44,11 +44,17 @@
               <p class="text-center" v-text="intro.paragraph" />
             </kinesis-element>
             <kinesis-element :strength="100" axis="y">
-              <v-btn class="font-iranYekanWebRegular" large="" :href="intro.link" outlined="" color="white">
+              <v-btn class="font-iranYekanWebRegular mx-1" large="" :href="intro.link" outlined="" color="white">
                 <v-icon left="">
                   mdi-download
                 </v-icon>
                 <span>دریافت</span>
+              </v-btn>
+              <v-btn class="font-iranYekanWebRegular mx-1" large="" :href="intro.myketLink" outlined="" color="white">
+                <v-icon left="">
+                  mdi-alpha-m-box-outline
+                </v-icon>
+                <span> دریافت از مایکت</span>
               </v-btn>
             </kinesis-element>
           </kinesis-container>
