@@ -9,11 +9,14 @@
       <v-container>
         <v-row no-gutters="" align="center">
           <v-spacer />
+          <v-btn outlined target="_block" depressed href="https://www.seller.hoboshop.ir/">
+            پنل فروشندگان
+          </v-btn>
           <v-btn v-for="item in items" :key="item.id" class="hidden-sm-and-down" text @click="$vuetify.goTo(`#${item.id}`)">
             {{ item.text }}
           </v-btn>
           <v-menu bottom left>
-            <template v-slot:activator="{ on }">
+            <template #activator="{ on }">
               <v-btn
                 dark
                 icon
@@ -83,7 +86,9 @@
           </v-col>
           <v-col cols="12" align-self="center">
             <p class="endspan ma-0 py-1">
-              طراحی شده با ❤️ توسط محمد امین پاسبان
+              طراحی شده با ❤️ توسط
+              <a href="http://maminpasban.ir" class="text-decoration-none white--text" target="_blank">
+                محمد امین پاسبان</a>
             </p>
           </v-col>
         </v-row>

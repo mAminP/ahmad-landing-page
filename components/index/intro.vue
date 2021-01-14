@@ -44,18 +44,68 @@
               <p class="text-center" v-text="intro.paragraph" />
             </kinesis-element>
             <kinesis-element :strength="100" axis="y">
-              <v-btn class="font-iranYekanWebRegular mx-1" large="" :href="intro.link" outlined="" color="white">
-                <v-icon left="">
-                  mdi-download
-                </v-icon>
-                <span>دریافت</span>
-              </v-btn>
-              <v-btn class="font-iranYekanWebRegular mx-1" large="" :href="intro.myketLink" outlined="" color="white">
-                <v-icon left="">
-                  mdi-alpha-m-box-outline
-                </v-icon>
-                <span> دریافت از مایکت</span>
-              </v-btn>
+              <v-row dense>
+                <v-col cols="12" md="7">
+                  <v-btn
+                    block
+                    class="font-iranYekanWebRegular"
+                    large=""
+                    :href="intro.link"
+                    outlined=""
+                    color="white"
+                  >
+                    <v-icon left="">
+                      mdi-download
+                    </v-icon>
+                    <span>دریافت مستقیم</span>
+                  </v-btn>
+                </v-col>
+                <v-col cols="12" md="5">
+                  <v-btn
+                    block
+                    class="font-iranYekanWebRegular mx-1"
+                    large=""
+                    :href="intro.myketLink"
+                    outlined=""
+                    color="white"
+                  >
+                    <v-icon left="">
+                      mdi-alpha-m-box-outline
+                    </v-icon>
+                    <span> دریافت از مایکت</span>
+                  </v-btn>
+                </v-col>
+                <v-col cols="12" md="5">
+                  <v-btn
+                    block
+                    class="font-iranYekanWebRegular"
+                    large=""
+                    :href="intro.playLink"
+                    outlined=""
+                    color="white"
+                  >
+                    <v-icon left="">
+                      mdi-google-play
+                    </v-icon>
+                    <span> دریافت از گوگل پلی</span>
+                  </v-btn>
+                </v-col>
+                <v-col cols="12" md="7">
+                  <v-btn
+                    block
+                    class="font-iranYekanWebRegular"
+                    large=""
+                    :href="intro.bazarLink"
+                    outlined=""
+                    color="white"
+                  >
+                    <v-icon left="">
+                      mdi-basket
+                    </v-icon>
+                    <span> دریافت از بازار</span>
+                  </v-btn>
+                </v-col>
+              </v-row>
             </kinesis-element>
           </kinesis-container>
         </kinesis-element>
@@ -66,9 +116,8 @@
         order-md="1"
         cols="9"
         sm="6"
-        lg="3"
+        lg="4"
         md="4"
-        offset-lg="1"
       >
         <kinesis-element type="depth" transform-origin="50% 50%" :strength="isMobile ? 3 :5">
           <v-img eager :src="intro.image" />

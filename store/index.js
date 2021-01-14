@@ -3,6 +3,8 @@ export const state = () => ({
     title: 'هوبوشاپ',
     link: 'https://hoboshopdl.ir/download_app/HoboShop.apk',
     myketLink: 'https://myket.ir/app/com.am.android.hoboshop',
+    playLink: 'https://play.google.com/store/apps/details?id=com.am.android.hoboshop',
+    bazarLink: 'https://cafebazaar.ir/app/com.am.android.hoboshop',
     paragraph: 'انتخابی آسان با هوبوشاپ',
     image: require('@/static/images/temp1.png')
   },
